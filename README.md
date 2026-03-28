@@ -1,1 +1,101 @@
-<h1 align="center">\n  <br>\n  <img src="https://img.icons8.com/color/144/000000/radar.png" alt="Port Scanner Logo" width="100">\n  <br>\n  Professional Port Scanner\n  <br>\n</h1>\n\n<h4 align="center">Hızlı, çoklu iş parçacıklı (multithreaded) ve asenkron Python Port Tarayıcı.</h4>\n\n<p align="center">\n  <a href="https://github.com/muhammetozkaya/port-scanner/blob/main/LICENSE">\n    <img src="https://img.shields.io/badge/Lisans-MIT-blue.svg" alt="License">\n  </a>\n  <a href="https://www.python.org/">\n    <img src="https://img.shields.io/badge/Python-3.x-yellow" alt="Python Version">\n  </a>\n  <a href="https://github.com/muhammetozkaya/port-scanner/stargazers">\n    <img src="https://img.shields.io/github/stars/muhammetozkaya/port-scanner?style=social" alt="Stars">\n  </a>\n</p>\n\n<p align="center">\n  <a href="#proje-hakkında">Proje Hakkında</a> •\n  <a href="#özellikler">Özellikler</a> •\n  <a href="#kurulum">Kurulum</a> •\n  <a href="#kullanım">Kullanım</a> •\n  <a href="#lisans">Lisans</a>\n</p>\n\n<p align="center">\n  <img src="https://via.placeholder.com/800x400.png?text=Terminal+Screenshot+Placeholder" alt="Terminal Çıktısı Ekran Görüntüsü">\n</p>\n\n## 📋 Proje Hakkında\n\nBu araç, siber güvenlik uzmanları, sistem yöneticileri ve ağ meraklıları için hedef sistemlerdeki açık portları tespit etmeyi ve çalışan servislerin bilgisini almayı (banner grabbing) kolaylaştırmak amacıyla geliştirilmiştir.\n\nPython ile yazılan **Professional Port Scanner**, çoklu iş parçacığı (threading) yapısı sayesinde standart tarayıcılara kıyasla çok daha hızlı sonuç üretir. İster tek bir IP adresi, port veya geniş çaplı taramalar için hem komut satırı esnekliği hem de detaylı JSON çıktı imkanı sunar.\n\n## 🌟 Özellikler\n\n- **Çoklu Hedef (Multi-target) ve Hedef Aralıkları:** Tek bir IP (örn. `192.168.1.1`) veya virgülle ayrılmış birden çok hedefi tarayabilirsiniz.\n- **Geniş Port Aralığı:** `80`, `1-1000` gibi esnek port aralığı belirleme yeteneği.\n- **Protokol Desteği:** Hem `TCP` hem de basit `UDP` port taraması gerçekleştirebilir.\n- **Hız Performansı (Threading):** Kullanıcı tanımlı Thread sayısı ile yüksek tarama ve ağ optimizasyonu.\n- **Servis Tanıma (Banner Grabbing):** Açık portların servis ismini belirleme ve versiyon bilgisi alabilme (HTTP gibi servisler için payload gönderimi içerir).\n- **Esnek Çıktı:** Renklendirilmiş (Colorama) terminal arayüzü ve tarama sonuçlarını tam kapsamlı `JSON` dosyası olarak kaydedebilme.\n\n## ⚙️ Kurulum\n\nProjeyi sisteminize klonlayıp çalıştırmak oldukça basittir:\n\n1. Repoyu bilgisayarınıza klonlayın:\n```bash\ngit clone https://github.com/muhammetozkaya/port-scanner.git\ncd port-scanner\n```\n\n2. Gerekli kütüphaneleri yükleyin:\n```bash\npip install -r requirements.txt\n```\n*(**Not:** Araç sadece terminal renklendirmesi için `colorama` modülüne ihtiyaç duyar.)*\n\n## 🚀 Kullanım\n\nAşağıdaki argümanlar ile taramalarınızı özelleştirebilirsiniz.\n\n| Parametre | Açıklama | Varsayılan |\n| :--- | :--- | :--- |\n| `-t, --target` | Hedef IP, Domain veya virgülle ayrılmış liste **(Zorunlu)** | - |\n| `-p, --ports` | Tarancak port veya port aralığı (Örn: 80 veya 1-1000) | `1-1024` |\n| `--protocol` | Tarama protokolü (`TCP` veya `UDP`) | `TCP` |\n| `--threads` |  Eşzamanlı kullanılacak thread sayısı | `100` |\n| `--timeout` |  Bağlantı veya yanıt için beklenecek saniye süresi | `1.0` |\n| `-o, --output`| Sonuçları belirttiğiniz dökümanda `JSON` olarak kaydeder | - |\n\n### Örnek Komutlar:\n\n**1. Yerel Ağdaki Temel Bir Hedefi Tarama:**\n```bash\npython scanner.py -t 192.168.1.1\n```\n\n**2. Belli Bir Aralıktaki Portları Hızlı Tarama (1000 Thread):**\n```bash\npython scanner.py -t 10.0.0.5 -p 1-65535 --threads 1000\n```\n\n**3. Domain Üzerinden Tarama ve Sonucu JSON Olarak Kaydetme:**\n```bash\npython scanner.py -t example.com -p 80,443 -o scan_results.json\n```\n\n**4. UDP Taraması Gerçekleştirme:**\n```bash\npython scanner.py -t 192.168.1.1 -p 53,161 --protocol UDP\n```\n\n## 📝 Geliştirici & Yazar\n\n**Muhammet Özkaya**  \n*Adli Bilişim Mühendisliği Öğrencisi & Siber Güvenlik Meraklısı*\n\n- Github: [@muhammetozkaya](https://github.com/muhammetozkaya)\n\n## ⚖️ Lisans\n\nBu proje [MIT](https://choosealicense.com/licenses/mit/) lisansı ile lisanslanmıştır. Detaylar için repoya eklenecek olan `LICENSE` dosyasına bakabilirsiniz. Eğitim ve güvenlik testleri amacıyla kullanılması önerilir. Sorumsuz veya yasa dışı kullanım durumunda yazar sorumlu tutulamaz.
+<h1 align="center">
+  <br>
+  <img src="https://img.icons8.com/color/144/000000/radar.png" alt="Port Scanner Logo" width="100">
+  <br>
+  Professional Port Scanner
+  <br>
+</h1>
+
+<h4 align="center">Hızlı, çoklu iş parçacıklı (multithreaded) ve asenkron Python Port Tarayıcı.</h4>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Lisans-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/Python-3.x-yellow" alt="Python Version">
+</p>
+
+<p align="center">
+  <a href="#proje-hakkında">Proje Hakkında</a> •
+  <a href="#özellikler">Özellikler</a> •
+  <a href="#kurulum">Kurulum</a> •
+  <a href="#kullanım">Kullanım</a> •
+  <a href="#lisans">Lisans</a>
+</p>
+
+---
+
+## 📋 Proje Hakkında
+
+Bu araç, siber güvenlik uzmanları, sistem yöneticileri ve ağ meraklıları için hedef sistemlerdeki açık portları tespit etmeyi ve çalışan servislerin bilgisini almayı (banner grabbing) kolaylaştırmak amacıyla geliştirilmiştir.
+
+Python ile yazılan **Professional Port Scanner**, çoklu iş parçacığı (threading) yapısı sayesinde standart tarayıcılara kıyasla çok daha hızlı sonuç üretir. İster tek bir IP adresi, port, ister geniş çaplı taramalar yapın; araç hem komut satırı esnekliği hem de detaylı JSON çıktı imkanı sunar.
+
+## 🌟 Özellikler
+
+- **Çoklu Hedef (Multi-target):** Tek bir IP (örn. `192.168.1.1`) veya virgülle ayrılmış birden çok hedefi aynı anda tarayabilirsiniz.
+- **Geniş Port Aralığı:** `80`, `1-1000` gibi esnek port aralığı belirleme yeteneği.
+- **Protokol Desteği:** Hem `TCP` hem de basit `UDP` port taraması gerçekleştirebilir.
+- **Hız Performansı (Threading):** Kullanıcı tanımlı Thread sayısı ile yüksek tarama hızı.
+- **Servis Tanıma (Banner Grabbing):** Açık portların servis ismini belirleme ve versiyon bilgisi okuyabilme (HTTP için varsayılan HTTP GET vb.).
+- **Esnek Çıktı:** Renklendirilmiş (Colorama) terminal arayüzü ve tarama sonuçlarını tam kapsamlı `JSON` dosyası olarak kaydedebilme.
+
+## ⚙️ Kurulum
+
+Projeyi sisteminize klonlayıp çalıştırmak oldukça basittir:
+
+1. Repoyu bilgisayarınıza klonlayın:
+```bash
+git clone https://github.com/muhammetozkaya/port-scanner.git
+cd port-scanner
+```
+
+2. Gerekli kütüphaneleri yükleyin:
+```bash
+pip install -r requirements.txt
+```
+*(**Not:** Araç sadece terminal renklendirmesi için `colorama` modülüne ihtiyaç duyar.)*
+
+## 🚀 Kullanım
+
+Araç, komut satırı argümanları ile çalışır. Terminalde `python scanner.py -h` komutuyla yardım menüsünü görüntüleyebilirsiniz.
+
+| Parametre | Açıklama | Varsayılan |
+| :--- | :--- | :--- |
+| `-t, --target` | Hedef IP, Domain veya virgülle ayrılmış liste **(Zorunlu)** | - |
+| `-p, --ports` | Taranacak port veya port aralığı (Örn: 80 veya 1-1000) | `1-1024` |
+| `--protocol` | Tarama protokolü (`TCP` veya `UDP`) | `TCP` |
+| `--threads` |  Eşzamanlı kullanılacak thread sayısı | `100` |
+| `--timeout` |  Bağlantı veya yanıt için beklenecek saniye süresi | `1.0` |
+| `-o, --output`| Sonuçları belirtilen isimle `JSON` olarak kaydeder | - |
+
+### Örnek Komutlar:
+
+**1. Yerel Ağdaki Temel Bir Hedefi Tarama:**
+```bash
+python scanner.py -t 192.168.1.1
+```
+
+**2. Belli Bir Aralıktaki Portları Hızlı Tarama (1000 Thread):**
+```bash
+python scanner.py -t 10.0.0.5 -p 1-65535 --threads 1000
+```
+
+**3. Domain Üzerinden Tarama ve Sonucu JSON Olarak Kaydetme:**
+```bash
+python scanner.py -t example.com -p 80,443 -o scan_results.json
+```
+
+**4. UDP Taraması Gerçekleştirme:**
+```bash
+python scanner.py -t 192.168.1.1 -p 53,161 --protocol UDP
+```
+
+## 📝 Geliştirici
+
+**Muhammet Özkaya**  
+*Adli Bilişim Mühendisliği Öğrencisi & Siber Güvenlik Çalışanı*
+
+- Github: [@muhammetozkaya](https://github.com/muhammetozkaya)
+
+## ⚖️ Lisans
+
+Bu proje [MIT](https://choosealicense.com/licenses/mit/) lisansı altındadır. Eğitim ve güvenlik testleri amacıyla kullanılması önerilir. Kötüye kullanım durumunda sorumluluk kullanıcıya aittir.
