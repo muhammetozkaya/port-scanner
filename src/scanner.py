@@ -193,7 +193,7 @@ class PortScanner:
         self.print_message(f"Starting Scan at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         self.print_message(f"Targets: {', '.join(resolved_targets)}")
         self.print_message(f"Ports: {self.start_port} - {self.end_port}")
-         self.print_message(f"Protocol: {self.scan_type}")
+        self.print_message(f"Protocol: {self.scan_type}")
         self.print_message(f"Threads: {self.threads}")
         self.print_message("=" * 60)
 
@@ -280,7 +280,7 @@ def main():
         sys.exit(1)
 
     # ASCII Art Header
-    print(Fore.CYAN + """
+    print(Fore.CYAN + r"""
     ================================================
      _____           _     _____                                
     |  __ \         | |   / ____|                               
