@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ## 🚀 Kullanım
 
-Araç, komut satırı argümanları ile çalışır. Terminalde `python scanner.py -h` komutuyla yardım menüsünü görüntüleyebilirsiniz.
+Araç, komut satırı argümanları ile çalışır. Terminalde `python src/scanner.py -h` komutuyla yardım menüsünü görüntüleyebilirsiniz. Ek detaylar için [docs/usage.md](docs/usage.md) dosyasına bakabilirsiniz.
 
 | Parametre | Açıklama | Varsayılan |
 | :--- | :--- | :--- |
@@ -71,22 +71,22 @@ Araç, komut satırı argümanları ile çalışır. Terminalde `python scanner.
 
 **1. Yerel Ağdaki Temel Bir Hedefi Tarama:**
 ```bash
-python scanner.py -t 192.168.1.1
+python src/scanner.py -t 192.168.1.1
 ```
 
 **2. Belli Bir Aralıktaki Portları Hızlı Tarama (1000 Thread):**
 ```bash
-python scanner.py -t 10.0.0.5 -p 1-65535 --threads 1000
+python src/scanner.py -t 10.0.0.5 -p 1-65535 --threads 1000
 ```
 
 **3. Domain Üzerinden Tarama ve Sonucu JSON Olarak Kaydetme:**
 ```bash
-python scanner.py -t example.com -p 80,443 -o scan_results.json
+python src/scanner.py -t example.com -p 80,443 -o output/scan_results.json
 ```
 
 **4. UDP Taraması Gerçekleştirme:**
 ```bash
-python scanner.py -t 192.168.1.1 -p 53,161 --protocol UDP
+python src/scanner.py -t 192.168.1.1 -p 53,161 --protocol UDP
 ```
 
 ## 📝 Geliştirici
